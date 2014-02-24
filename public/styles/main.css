@@ -1,0 +1,185 @@
+a {
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: textFont;
+	src: url('fonts/trench100free.otf');
+}
+
+@font-face {
+	font-family: hebrewFont;
+	src: url('fonts/hebrew.ttf');
+}
+
+#loginForm {
+	margin-top: 30%;
+}
+
+	/*Change the header collor*/
+    .ui-page .ui-header {
+        background: #7abc75 !important;
+    }
+
+.formButtons {
+	background-color: #7abc75;
+	text-align: center;
+	border-radius: 5px 5px 5px 5px;
+	font-size: 200%;
+	font-family: textFont;
+	padding:2%
+}
+
+td a {
+	display: block;
+	height: 100%;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: bottom;
+	background-color: #7abc75;
+	font-family: textFont;
+	font-size: 150%;
+	width: 100%;
+}
+
+td a:active {
+	display: block;
+	height: 100%;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: bottom;
+	background-color: #e6f0a3;
+	font-family: textFont;
+	font-size: 150%;
+	width: 100%;
+}
+
+.textDiv {
+	border: 2px solid #a1a1a1;
+	background: -moz-linear-gradient(top,  #e6f0a3 0%, #d2e638 50%, #c3d825 51%, #dbf043 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(50%,#d2e638), color-stop(51%,#c3d825), color-stop(100%,#dbf043)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e6f0a3 0%,#d2e638 50%,#c3d825 51%,#dbf043 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=0 ); /* IE6-9 */
+	border-radius: 25px;
+	display: inline-block;
+	max-width: 100%;
+	color: #000000;
+	font-family: textFont;
+	font-size: 150%;
+	line-height: 150%;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 1px 1px 0px #86ae47;
+	opacity: 0.8;
+	padding: 1%;
+	width: 89%;
+	margin-top: 5%;
+}
+#basicInfo {
+
+	text-align: left;
+}
+
+#loginPage {
+	background: url('/images/bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: 100% 100%;
+}
+
+#homeButtons {
+
+	opacity: 0.8;
+	width: 89%;
+	height: 60%;
+	margin-top: 15%;
+	text-align: center;
+	position: absolute;
+}
+
+#homeButtons table {
+	width: 100%;
+	height: 100%
+}
+
+input[type="text"] {
+	font-size: 200%;
+	font-family: textFont;
+	text-align: center;
+}
+
+input[type="tel"] {
+	font-size: 200%;
+	font-family: textFont;
+}
+
+input[type="range"] {
+	font-size: 200%;
+}
+
+input[type="button"] {
+	font-size: 70%;
+	size: 70%
+}
+
+#statusButtons {
+	height: 25%;
+	margin-bottom: 10%;
+	font-size: 250%;
+	font-family: hebrewFont;
+	position: absolute;
+	width: 90%;
+	margin-left: 2%;
+}
+
+#showProfilePic {
+	width: 65px;
+	height: 65px;
+}
+
+#guestForm {
+	opacity: 0.8;
+}
+
+#playerInfoDiv {
+	position: relative;
+	margin-top: 10%;
+}
+
+#showProfilePic img {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0;
+	border: 5px solid black;
+}
+
+.attendingButton {
+	text-align: center;
+	width: 45%;
+	height: 80%;
+	background: #339933;
+	float: left;
+	border-radius: 5px;
+	padding-top: 12%;
+}
+
+.nextGameInfo {
+	margin-top: 50%;
+	margin-left: 3%;
+}
+
+.notAttendingButton {
+	text-align: center;
+	width: 45%;
+	height: 80%;
+	background: #FF0000;
+	float: right;
+	border-radius: 5px;
+	padding-top: 12%;
+}

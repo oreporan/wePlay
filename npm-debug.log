@@ -1,0 +1,46 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'install', 'mongodb' ]
+info using npm@1.1.4
+info using node@v0.6.12
+verbose config file /home/orepor/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/share/npm/npmrc
+verbose caching /home/orepor/Documents/wePlay/node_modules/nodemailer/package.json
+verbose loadDefaults nodemailer@0.4.4
+verbose caching /home/orepor/Documents/wePlay/node_modules/connect/package.json
+verbose loadDefaults connect@2.7.3
+verbose caching /home/orepor/Documents/wePlay/node_modules/express/package.json
+verbose loadDefaults express@3.2.2
+verbose cache add [ 'mongodb', null ]
+silly cache add: name, spec, args [ undefined, 'mongodb', [ 'mongodb', null ] ]
+verbose parsed url { pathname: 'mongodb', path: 'mongodb', href: 'mongodb' }
+verbose addNamed [ 'mongodb', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'mongodb', '', false ]
+verbose raw, before any munging mongodb
+verbose url resolving [ 'https://registry.npmjs.org/', './mongodb' ]
+verbose url resolved https://registry.npmjs.org/mongodb
+http GET https://registry.npmjs.org/mongodb
+ERR! Error: failed to fetch from registry: mongodb
+ERR!     at /usr/share/npm/lib/utils/npm-registry-client/get.js:139:12
+ERR!     at cb (/usr/share/npm/lib/utils/npm-registry-client/request.js:31:9)
+ERR!     at Request._callback (/usr/share/npm/lib/utils/npm-registry-client/request.js:136:18)
+ERR!     at Request.callback (/usr/lib/nodejs/request/main.js:119:22)
+ERR!     at Request.<anonymous> (/usr/lib/nodejs/request/main.js:212:58)
+ERR!     at Request.emit (events.js:88:20)
+ERR!     at ClientRequest.<anonymous> (/usr/lib/nodejs/request/main.js:412:12)
+ERR!     at ClientRequest.emit (events.js:67:17)
+ERR!     at HTTPParser.onIncoming (http.js:1261:11)
+ERR!     at HTTPParser.onHeadersComplete (http.js:102:31)
+ERR! You may report this log at:
+ERR!     <http://bugs.debian.org/npm>
+ERR! or use
+ERR!     reportbug --attach /home/orepor/Documents/wePlay/npm-debug.log npm
+ERR! 
+ERR! System Linux 3.8.0-36-generic
+ERR! command "node" "/usr/bin/npm" "install" "mongodb"
+ERR! cwd /home/orepor/Documents/wePlay
+ERR! node -v v0.6.12
+ERR! npm -v 1.1.4
+ERR! message failed to fetch from registry: mongodb
+verbose exit [ 1, true ]

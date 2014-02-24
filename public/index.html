@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>wePlay</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+
+		<!--  COUTNDOWN    -->
+		<script type="text/javascript" src="/js/countdown2/jquery.countdown.js"></script>
+
+		<!--- My Things --->
+		<script src="js/main.js" type="text/javascript"></script>
+		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+
+		<!-- Iphone things -->
+		<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="images/splash.png">
+		<link rel="apple-touch-icon" href="images/icon.png"/>
+		<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="images/splash.png">
+
+	</head>
+
+	<body data-theme="b">
+
+		<!-------------------------- Login Page --------------------------------------->
+
+		<div class="page" data-role="page" id="loginPage">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1>wePlay</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<form id="loginForm">
+					<input type="text" name="name" id="firstName" value="" placeholder="First Name"  style="opacity: 0.8" />
+					<input type="text" name="name" id="lastName" value=""  placeholder="Last Name"   style="opacity: 0.8" />
+				</form>
+				<a href="#" data-theme="b" onClick="userLogin()" style="text-decoration:none;color:black;width:100%"><div class="formButtons">Log in/Signup</div></a>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<!---------------------------- My Games Page -------------------------------->
+
+		<div class="page" data-role="page" id="myGamesPage" data-position="fixed">
+
+			<div data-role="header" data-theme="b">
+				<h1></h1>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div id="statusButtons">
+					<a style="color:black;width:100%" href="#" onClick="attend()">
+					<div class="attendingButton">
+						<img src="images/attending.png">
+					</div></a>
+					<a style="color:black;width:100%" href="#" onClick="notAttend()">
+					<div class="notAttendingButton">
+						<img src="images/notAttending.png">
+					</div></a>
+				</div>
+
+				<!--- Info about the game --->
+				<div class="nextGameInfo">
+					<span class="textDiv"><img style="float:left" src="images/countdown.png"><span id="clock"></span></span>
+					<span class="textDiv"><img style="float:left"  src="images/when.png"><span id="nextDate"></span></span>
+					<span class="textDiv"><img style="float:left" src="images/where.png"><span  id="nextPlace"></span></span>
+
+				</div>
+			</div><!-- /content -->
+
+		</div><!-- /page -->
+
+		<!--------------------------- Status Page --------------------------------->
+
+		<div class="page" data-role="page" id="statusPage">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1></h1>
+				<a href="#loginPage" data-icon="delete"><span class="userNameHeader"></span></a>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<div id="homeButtons">
+					<table>
+						<tr>
+							<td id="squadTD"><a style="border-radius:15px 0 0 0;background-image: url('/images/squad.png');color:black" href="#" onClick="listPlayers()">The Squad</td>
+							<td id="nextGameTD"><a style="border-radius:0 15px 0 0;background-image: url('/images/nextGame.png');color:black" href="#myGamesPage">Next Game</a></td>
+						</tr>
+						<tr>
+							<td id="profileTD"><a  style="border-radius:0 0 0 15px; background-image: url('/images/profile.png');color:black" href="#editProfilePage" onClick="editProfile()">Profile</a></td>
+							<td id="addFriendTD"><a  style="border-radius:0 0 15px 0; background-image: url('/images/addFriend.png');color:black" href="#addFriendPage">Add Friend</a></td>
+						</tr>
+					</table>
+
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<!------------------------------- Full Game Pop-up! (Also already attending) ----------------------------------------->
+		<div class="page" data-role="page" id="fullGamePage" data-theme="b">
+
+			<div data-role="content">
+				<div  class="textDiv"  data-role="popup" id="fullGamePopup">
+					<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<span style="background-color:black;color:white">Sorry! The game is Full OR you are already signed in</span>
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+		
+		<!------------------------------- Best Player Pop-up! ----------------------------------------->
+		<div class="page" data-role="page" id="bestPlayerPage" data-theme="b">
+
+			<div data-role="content">
+				<div data-role="popup" id="bestPlayerPopup">
+					 <label for="select-native-fc">Man of the Match:</label>
+    <form name="bestPlayerForm">
+    <select name="playerSelect" id="playerSelect" required>
+        <option>Ore Poran</option>
+        <option>Odi Weinberger</option>
+        <option>Yahav Winkler</option>
+        <option>Or Harel</option>
+        <option>Nir Lavee</option>
+        <option>Adar Neuman</option>
+        <option>Yaniv Shuldenfrei</option>
+        <option>Tomer Honigman</option>
+        <option>Ehud Eldan</option>
+        <option>Itai Rotschild</option>
+        <option>Asaf Ergas</option>
+        <option>Niv Funis</option>
+    </select>
+   	 <a href="#" onClick="bestPlayer()"><div class="formButtons">Send</div></a>
+    </form>
+				
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+
+		<!------------------------- Player List Page ---------------------------------->
+
+		<div class="page" data-role="page" id="playerListPage" >
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1>Who's in?</h1>
+				<a href="#statusPage" data-icon="back">Back</a>
+
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<ol id="listOfPlayers"  data-theme="b" data-role="listview" data-inset="true" data-divider-theme="a"></ol>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<!-------------------------- Add a Friend Page ------------------------------>
+
+		<div class="page" data-role="page" id="addFriendPage">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1></h1>
+				<a href="#statusPage" data-icon="back">Back</a>
+
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<!--<form id="guestForm"> -->
+				<input type="text" name="text-basic" id="guestName" placeholder="Full Name" >
+				<input type="tel" name="tel" id="guestTel" placeholder="Cellphone Number">
+				<div  class="textDiv">
+					<label for="slider">Skills:</label>
+					<br>
+				</div>
+				<input type="range" name="slider" id="guestSlider" value="5" min="0" max="10">
+				<a href="#" style="text-decoration:none;color:black" onClick="addGuest()">	<div class="formButtons">Add Player</div></a>
+			
+				<!--</form>	-->
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<!----------------------------- Player Profile Page ---------------------------->
+
+		<div class="page" data-role="page" id="profilePage">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1></h1>
+				<a href="#playerListPage" data-icon="back">Back</a>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<div id="showProfilePic"><img id="userPic" src="/images/emptyProfile.jpg"/>
+				</div>
+				<div id="playerInfoDiv">
+					<div class="textDiv" id="basicInfo">
+						<span id="showFullName"></span>
+						<span id="showFoot"></span>
+						<span id="showGamesPlayed"></span>
+						<span id="showMotto"></span>
+					</div>
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<!----------------------------- Edit Profile Page ---------------------------->
+
+		<div class="page" data-role="page" id="editProfilePage">
+
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1></h1>
+				<a href="#statusPage" data-icon="back">Back</a>
+			</div><!-- /header -->
+
+			<div data-role="content">
+
+				<form id="profileForm">
+					<div id="showProfilePic">
+						<label for="inputPic"><img id="pic" src="/images/emptyProfile.jpg"/> </label>
+					</div>
+					<input type="file" id="inputPic" onchange="profilePic(this)">
+					<br>
+
+					<div class="textDiv">
+						<label for="textarea-a">Motto:</label>
+					</div>
+					<textarea name="textarea" id="mottoTextArea"></textarea>
+					<div data-role="fieldcontain">
+						<div class="textDiv">
+							<label for="footSelect">Foot:</label>
+						</div>
+						<select name="footSelect" id="footSelect" data-role="slider" data-theme="c" data-track-theme="a">
+							<option value="right">Right</option>
+							<option value="left">Left</option>
+						</select>
+					</div>
+				</form>
+				<a  href="#" id="loginUser" onClick="submitProfile()" style="text-decoration:none;color:black" ><div class="formButtons">Submit</div></a>
+
+			</div><!-- /content -->
+		</div><!-- /page -->
+	</body>
+</html>
